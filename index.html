@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap"
+      rel="stylesheet"
+    />
+    <title>Frontend Mentor | [Challenge Name Here]</title>
+    <link rel="stylesheet" href="style.css" />
+    <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+    <style>
+      .attribution {
+        font-size: 11px;
+        text-align: center;
+      }
+
+      .attribution a {
+        color: hsl(228, 45%, 44%);
+      }
+    </style>
+  </head>
+
+  <body>
+    <main>
+      <h1>Our Pricing</h1>
+      <div class="time">
+        <p>Annually</p>
+        <label class="switch">
+          <input type="checkbox" checked name="checkbox" class="checkbox" />
+          <span class="ToggleRound"></span>
+        </label>
+        <p>Monthly</p>
+      </div>
+
+      <div class="pricingbox">
+        <div class="basicBox priceBox">
+          <h2>Basic</h2>
+          <h3>$<span class="dollar firstprice">19.99</span></h3>
+          <hr />
+          <h4>500 GB Storage</h4>
+          <hr />
+          <h4>2 Users Allowed</h4>
+          <hr />
+          <h4>Send up to 3 GB</h4>
+          <hr />
+          <button class="Fbutton">Learn More</button>
+        </div>
+        <div class="professionalBox priceBox">
+          <h2 class="ProfText">Professional</h2>
+          <h3 class="ProfText">
+            $<span class="dollar secondprice">24.99</span>
+          </h3>
+          <hr />
+          <h4 class="ProfText">1 TB Storage</h4>
+          <hr />
+          <h4 class="ProfText">5 Users Allowed</h4>
+          <hr />
+          <h4 class="ProfText">Send up to 10 GB</h4>
+          <hr />
+          <button class="ProfButton">Learn More</button>
+        </div>
+        <div class="MasterBox priceBox">
+          <h2>Master</h2>
+          <h3>$<span class="dollar Thirdprice">39.99</span></h3>
+          <hr />
+          <h4>2 TB Storage</h4>
+          <hr />
+          <h4>10 Users Allowed</h4>
+          <hr />
+          <h4>Send up to 20 GB</h4>
+          <hr />
+          <button class="Tbutton">Learn More</button>
+        </div>
+      </div>
+    </main>
+    <footer>
+      <div class="attribution">
+        Challenge by
+        <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
+          >Frontend Mentor</a
+        >. Coded by <a href="#">Osauyi</a>.
+      </div>
+    </footer>
+  </body>
+  <script>
+    let Tswitched = document.querySelector(".checkbox");
+    let Fprice = document.querySelector(".firstprice");
+    let Sprice = document.querySelector(".secondprice");
+    let Tprice = document.querySelector(".Thirdprice");
+
+    isActive = false;
+
+    Tswitched.addEventListener("click", toggleIt);
+
+    function toggleIt() {
+      if (isActive) {
+        monthlyBill();
+      } else {
+        yearlyBill();
+      }
+    }
+
+    function monthlyBill() {
+      Fprice.innerHTML = 19.99;
+      Sprice.innerHTML = 24.99;
+      Tprice.innerHTML = 39.99;
+
+      isActive = false;
+    }
+    monthlyBill();
+
+    function yearlyBill() {
+      Fprice.innerHTML = 199.99;
+      Sprice.innerHTML = 249.99;
+      Tprice.innerHTML = 399.99;
+
+      isActive = true;
+    }
+  </script>
+</html>

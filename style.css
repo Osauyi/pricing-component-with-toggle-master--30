@@ -1,0 +1,252 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+:root {
+
+  --Very-Light-Grayish-Blue: hsl(240, 78%, 98%);
+  --Light-Grayish-Blue: hsl(234, 14%, 74%);
+  --Grayish-Blue: hsl(233, 13%, 49%);
+  --Dark-Grayish-Blue: hsl(232, 13%, 33%);
+
+  --linear-grad: linear-gradient(to right bottom, #a3a8f0, #959aec, #868be7, #787de2, #696fdd);
+
+}
+
+body {
+
+
+  text-align: center;
+  font-family: 'Montserrat', sans-serif;
+  padding: 60px 20px 40px;
+  background-image: url(images/bg-top.svg);
+  background-position: 190px -40px;
+  background-repeat: no-repeat;
+  background-color: #a3a8f03c;
+}
+
+h1 {
+  color: var(--Grayish-Blue);
+  font-size: 2rem;
+}
+
+h2 {
+  color: var(--Grayish-Blue);
+  font-size: 1.2rem;
+}
+
+h3 {
+  color: var(--Dark-Grayish-Blue);
+  font-size: 2rem;
+  margin: 10px 0 30px;
+}
+
+h4 {
+  color: var(--Grayish-Blue);
+  margin: 15px 0;
+}
+
+
+p {
+  font-weight: 600;
+  color: var(--Light-Grayish-Blue);
+  font-size: 0.9375rem;
+  display: flex;
+  align-self: center;
+}
+
+
+
+.time {
+  display: flex;
+  justify-content: space-between;
+  width: 70%;
+  margin: 30px auto;
+}
+
+
+.dollar {
+  font-size: 4rem;
+  position: relative;
+  top: 10px;
+}
+
+/* TOGGLE */
+
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 55px;
+  height: 30px;
+  margin: 0 10px;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+
+.ToggleRound {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  transition: .4s;
+  -webkit-transition: .4s;
+  background-color: var(--Light-Grayish-Blue);
+  border-radius: 50px;
+}
+
+.ToggleRound:before {
+  position: absolute;
+  content: "";
+  height: 22px;
+  width: 22px;
+  left: 4px;
+  bottom: 4px;
+  background-color: var(--Very-Light-Grayish-Blue);
+  -webkit-transition: .4s;
+  transition: 0.4s;
+  border-radius: 50px;
+}
+
+input:checked+.ToggleRound {
+  background-image: var(--linear-grad);
+}
+
+input:hover+.ToggleRound {
+  background-color: #a3a8f0a1;
+}
+
+input:checked+.ToggleRound:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
+}
+
+/*  */
+
+
+.pricingbox {
+  margin-top: 60px;
+}
+
+.priceBox {
+  padding: 40px 30px;
+  border-radius: 10px;
+  background-color: #fff;
+}
+
+.priceBox+.priceBox {
+  margin-top: 35px;
+}
+
+.professionalBox {
+  background-image: var(--linear-grad);
+  color: var(--Very-Light-Grayish-Blue);
+}
+
+.ProfText {
+  color: var(--Very-Light-Grayish-Blue);
+}
+
+button {
+  width: 100%;
+  margin-top: 30px;
+  border-radius: 5px;
+  border: none;
+  padding: 15px 0;
+  text-transform: uppercase;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+  letter-spacing: .15rem;
+}
+
+.Tbutton,
+.Fbutton {
+  color: var(--Very-Light-Grayish-Blue);
+  background-image: linear-gradient(to right, #a3a8f0, #959aec, #868be7, #787de2, #696fdd);
+  border: 1px solid hsla(237, 63%, 64%, 0.1);
+}
+
+.Tbutton:hover,
+.Fbutton:hover {
+  border: 1px solid hsl(237, 63%, 64%);
+  background-color: #fff;
+  background-image: initial;
+  color: hsl(237, 63%, 64%);
+  ;
+}
+
+.ProfButton {
+  background-color: var(--Very-Light-Grayish-Blue);
+  color: hsl(237, 63%, 64%);
+  border: 1px solid var(--Very-Light-Grayish-Blue);
+}
+
+.ProfButton:hover {
+  background-color: initial;
+  color: var(--Very-Light-Grayish-Blue);
+}
+
+hr {
+  border: none;
+  height: 1px;
+  background-color: var(--Light-Grayish-Blue);
+}
+
+footer {
+  margin-top: 40px;
+}
+
+@media screen and (min-width:62.5rem) {
+
+
+  body {
+    background-image: url(images/bg-top.svg), url(images/bg-bottom.svg);
+    background-position: top right, bottom left;
+    padding-top: 80px;
+  }
+
+
+
+  .time {
+    width: 20%;
+  }
+
+  .pricingbox {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    width: 80%;
+    margin: 5rem auto;
+  }
+
+  .priceBox+.priceBox {
+    margin-top: 0;
+  }
+
+  .basicBox,
+  .MasterBox {
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+  }
+
+  .basicBox {
+    border-radius: 10px 0 0 10px;
+  }
+
+  .MasterBox {
+    border-radius: 0 10px 10px 0;
+  }
+
+  .professionalBox {
+    padding: 60px 30px;
+  }
+}
